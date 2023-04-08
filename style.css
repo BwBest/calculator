@@ -53,6 +53,7 @@ body{
     border-radius: 10px;
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 
 .screen-text{
@@ -138,11 +139,12 @@ button:active{
     transform: scale(1.0);
 }
 
-h2{
-    font-weight: 600;
+#operation-text{
+    font-weight: 400;
 }
 
-h5{
-    font-weight: 400;
+#screen-text{
+    font-weight: 900;
+    font-size: 3rem;
 }
 
