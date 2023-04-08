@@ -1,31 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root{
+    --background-dark: #22252D;
+    --background-light: #2A2D37;
+    --text: #FBFAFB;
+    --green-text: #43D0B9;
+    --red-text: #B46267;
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 body{
     background: #f5efed;
     height: 100vh;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .calculator-box{
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px; 
 
-    height: 500px;
-    width: 500px;
-    background: #2F323A;
+    height: 35rem;
+    width: 20rem;
+    border-radius: 30px;
+
+    background: var(--background-dark);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 .screen{
-    grid-area: 1 / 1 / 2 / 3;
+    grid-area: 1 / 1 / 2 / 2;
+
     text-align: right;
     color: #fff;
     font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: var(--text);
+    padding: 0 2rem;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.screen-text{
+    text-align: right;
+    width: 100%;
+}
+
+.keypad{
+    grid-area: 2 / 1 / 3 / 2;
+
+    display: flex;
+    background-color: var(--background-light);
+    padding: 1.2rem;
+    border-radius: 40px 40px 30px 30px;
+    margin: 0;
+    margin-top: 2rem;
 }
 
 .numbers{
@@ -34,16 +77,72 @@ body{
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px; 
+    width: 100%;
+}
 
-    grid-area: 2 / 1 / 4 / 2;
+.number-key{
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--text);
+    background-color: var(--background-dark);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    font-weight: 400;
 }
 
 .operators{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px; 
-
-    grid-area: 2 / 2 / 4 / 3;
+    width: 50%;
 }
+
+.operator-key{
+    margin: 0.5rem 0.2rem;
+    font-size: 1.5rem;
+    color: var(--text);
+    background-color: var(--background-dark);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+#equal{  
+    grid-area: 3 / 2 / 5 / 3;
+}
+
+#dot{
+    grid-area: 3 / 1 / 5 / 2;
+}
+
+#remove, #clear-all{
+    color: var(--red-text);
+}
+
+#add, #subtract, #divide, #multiply, #equal, #dot{
+    color: var(--green-text);
+}
+
+button{
+    transition: transform 0.1s linear;
+}
+
+button:hover{
+    transform: scale(1.15);
+}
+
+button:active{
+    transform: scale(1.0);
+}
+
+h2{
+    font-weight: 600;
+}
+
+h5{
+    font-weight: 400;
+}
+
